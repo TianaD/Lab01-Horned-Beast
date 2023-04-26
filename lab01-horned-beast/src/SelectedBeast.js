@@ -1,8 +1,11 @@
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import {useState} from 'react';
+import HornedBeast from "./hornedbeast";
+import DropdownMenu from "react-bootstrap/esm/DropdownMenu";
+import { Form } from "react-bootstrap";
 
-function SelectedBeast() {
+function SelectedBeast(props) {
     const {show, setShow} = useState(true);
     
     const {handleClose} = () =>(false);
@@ -11,9 +14,10 @@ function SelectedBeast() {
     <>
     <Modal show={show} onHide={handleClose}>
     <Modal.Header closeButton>
-      <Modal.Title>Modal heading</Modal.Title>
+      <Modal.Title>{props.HornedBeast.title}</Modal.Title>
     </Modal.Header>
-    <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
+    {/* <img src={props.HornedBeast.image_url}></img> */}
+    <Modal.Body>{props.HornedBeast.description}</Modal.Body>
     <Modal.Footer>
       <Button variant="secondary" onClick={handleClose}>
         Close
@@ -21,7 +25,7 @@ function SelectedBeast() {
       <Button variant="primary" onClick={handleClose}>
         Save Changes
       </Button>
-    </Modal.Footer>
+    </Modal.Footer> 
     </Modal>
     </>
   );

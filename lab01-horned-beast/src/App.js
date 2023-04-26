@@ -10,6 +10,7 @@ import { Button, Modal } from 'react-bootstrap';
 
 function App() {
   const [displaySelectedBeast, setDisplaySelectedBeast] = useState(true);
+  const []
 
   // let SelectedBeast = <SelectedBeast/>
   // if(displaySelectedBeast === false){
