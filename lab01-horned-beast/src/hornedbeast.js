@@ -37,9 +37,13 @@ function HornedBeast(props) {
 
   return (
   <div style={{}}>
-  <h1>{props.beast.title}</h1>
-  <img width = {200} src = {props.beast.image_url} />
-  <h1>{props.beast.description}</h1>
+  <h1>{props.hornedbeast.title}</h1>
+  <img onClick={() => {
+            // setDisplaySelectedBeast(true)
+            props.updateFunction(true)
+            props.updateFunction2([props.hornedbeast.title, props.hornedbeast.image_url, props.hornedbeast.description])
+    }}width = {200} src = {props.hornedbeast.image_url} alt={'noWay'}/>
+  <h1>{props.hornedbeast.description}</h1>
   <h1 onClick = {function () {
     if(isFavorited === 0){
       setIsFavorited(1)
@@ -49,6 +53,10 @@ function HornedBeast(props) {
       setIsFavorited(isFavorited + 1)
     }
   }}>{heart}{isFavorited}</h1>
+          <Button onClick={() => {
+            // setDisplaySelectedBeast(true)
+            props.updateFunction(true)
+    }}>display</Button>
   </div>
   );
 

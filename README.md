@@ -7,3 +7,7 @@ Start time: 330 pm
 Finish time: 
 
 Actual time needed to complete: 
+
+
+
+note* microsoft dev tools (for download) allows me to see what components are in what
