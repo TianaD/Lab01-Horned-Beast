@@ -32,8 +32,18 @@ import Form from 'react-bootstrap/Form';
 
 function Main(props) {
     // map through array and create a new array of horned beast components
-    // const [filteredBeast, setFilteredBeast] = useState([]);
-    let result = DataArray.map(function (value, index) {
+    const [filteredBeast, setFilteredBeast] = useState('');
+    let filteredArray = DataArray.filter(function (element) {
+        console.log(element.horns)
+        if (element.horns == filteredBeast || filteredBeast == '') {
+            return true
+        } else {
+            return false;
+        }
+    })
+    
+    // filter function returns and accepts one argument and returns true of false 
+    let result = filteredArray.map(function (value, index) {
 
         return <HornedBeast updateFunction={props.updateFunction} updateFunction2={props.updateFunction2} hornedbeast={value} />
     })
@@ -48,7 +58,7 @@ function Main(props) {
                         How Many Horns
                     </Form.Label>
 
-                    <Form.Control as='select' onChange={this.filter}>
+                    <Form.Control as='select' onChange={(event) => {setFilteredBeast(event.target.value)}}>
                         <option value=''>AllHorns</option>
                         <option value='1'>one</option>
                         <option value='2'>two</option>
@@ -59,7 +69,7 @@ function Main(props) {
                 </Form.Group>
 
             </Form>
-            {/* {result} */}
+            {result}
 
 
         </div>
