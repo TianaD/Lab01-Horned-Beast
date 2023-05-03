@@ -1,3 +1,4 @@
+// note* microsoft dev tools (for download) allows me to see what components are in what
 import { useState } from 'react';
 import './App.css';
 import React from 'react';
